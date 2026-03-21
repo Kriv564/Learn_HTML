@@ -1,0 +1,16 @@
+.menu {
+    list-style-image: url("../images/sqpurple.gif");
+}
+
+.sub {
+    list-style-image: url("../images/sqorange.gif");
+}
+
+.sub ul {
+    list-style-image: url("../images/bullet3.png");
+}
+
+li {
+    margin: 6px 0;
+    font-family: Arial;
+}

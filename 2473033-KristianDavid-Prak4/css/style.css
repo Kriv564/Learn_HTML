@@ -1,0 +1,37 @@
+body {
+    background: #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.box-1 {
+    width: 320px;
+    padding: 15px;
+    background: left url("../images/box_1.gif") repeat-y;
+}
+
+.box-isi {
+    background: 
+        url("../images/box_tl.gif") top left no-repeat,
+        url("../images/box_tr.gif") top right no-repeat,
+        url("../images/box_bl.gif") bottom left no-repeat,
+        url("../images/box_br.gif") bottom right no-repeat,
+        #990000;
+        
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.box-isi h2 {
+    margin: 0 0 10px;
+}
+
+.more {
+    color: yellow;
+    text-decoration: none;
+}
+
+.more:hover {
+    color: green;
+    text-decoration: underline;
+}
