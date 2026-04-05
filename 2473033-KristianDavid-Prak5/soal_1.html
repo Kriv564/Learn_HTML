@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2473033-KristianDavid</title>
+
+<style>
+
+body{
+    font-family: Arial;
+}
+
+a.box{
+    display:inline-block;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+.corner{
+    width:40px;
+    height:40px;
+}
+
+.center{
+    padding:5px; 
+}
+
+.tl{ background:url(src/tr.png) no-repeat; }
+.tr{ background:url(src/tl.png) no-repeat; }
+.bl{ background:url(src/bl.png) no-repeat; }
+.br{ background:url(src/br.png) no-repeat; }
+
+a.box:hover .tl{ background:url(src/tl_h.png) no-repeat; }
+a.box:hover .tr{ background:url(src/tr_h.png) no-repeat; }
+a.box:hover .bl{ background:url(src/bl_h.png) no-repeat; }
+a.box:hover .br{ background:url(src/br_h.png) no-repeat; }
+
+</style>
+
+</head>
+
+<body>
+
+<a href="#" class="box">
+<table>
+
+<tr>
+    <td class="corner tl"></td>
+    <td></td>
+    <td class="corner tr"></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td class="center">
+        <img src="src/star.jpg" width="150">
+    </td>
+    <td></td>
+</tr>
+
+<tr>
+    <td class="corner bl"></td>
+    <td></td>
+    <td class="corner br"></td>
+</tr>
+
+</table>
+</a>
+
+</body>
+</html>

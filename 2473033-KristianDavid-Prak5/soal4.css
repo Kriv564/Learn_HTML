@@ -1,0 +1,39 @@
+body {
+    background: #881111;
+}
+
+/* hilangkan default list */
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+/* tiap menu */
+.navbar li {
+    float: left;
+    margin-right: 5px;
+
+    /* background gambar */
+    background: url(src/nav_left.gif) top left no-repeat;
+}
+
+/* link di dalamnya */
+.navbar li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+/* hover biar keren */
+.navbar li a:hover {
+    background-color: rgba(212, 22, 22, 0.1);
+}
+
+/* clear float */
+.navbar::after {
+    content: "";
+    display: block;
+    clear: both;
+}

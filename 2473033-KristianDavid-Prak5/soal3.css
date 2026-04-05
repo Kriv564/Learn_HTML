@@ -1,0 +1,46 @@
+body {
+    background: #ddd;
+}
+
+.container {
+    width: 800px;
+    margin: 20px auto;
+}
+
+/* header merah */
+.header {
+    height: 80px;
+    background: red;
+    margin-bottom: 10px;
+}
+
+/* sidebar biru */
+.sidebar {
+    width: 150px;
+    height: 350px;
+    background: blue;
+    float: left;
+    margin-right: 10px;
+}
+
+/* content hijau */
+.content {
+    background: green;
+    height: 350px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* kotak kuning di kanan */
+.box {
+    width: 120px;
+    height: 120px;
+    background: yellow;
+    float: right;
+    margin: 10px;
+}
+
+/* clear float */
+.clear {
+    clear: both;
+}
