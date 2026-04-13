@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kristian David - 2473033</title>
+
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    .container {
+        width: 800px;
+        height: 600px;
+        border: 3px solid #aaa;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+    }
+
+    .fill {
+        background-color: orange;
+    }
+
+    .empty {
+        background-color: transparent;
+    }
+</style>
+</head>
+
+<body>
+
+<label>Tinggi Piramida</label>
+<input type="number" id="tinggi">
+<button onclick="buatPiramida()">Proses</button>
+
+<div class="container">
+    <div id="hasil"></div>
+</div>
+
+<script>
+function buatPiramida() {
+    let tinggi = document.getElementById("tinggi").value;
+
+    if (tinggi === "" || isNaN(tinggi)) {
+        alert("Masukkan angka yang valid!");
+        return;
+    }
+
+    tinggi = parseInt(tinggi);
+
+    let output = "<table>";
+
+    let lebar = tinggi * 2 - 1;
+
+    for (let i = 1; i <= tinggi; i++) {
+        output += "<tr>";
+
+        let isi = i * 2 - 1;
+        let kosong = (lebar - isi) / 2;
+
+        for (let j = 1; j <= kosong; j++) {
+            output += "<td class='empty'></td>";
+        }
+
+        for (let j = 1; j <= isi; j++) {
+            output += "<td class='fill'></td>";
+        }
+
+        for (let j = 1; j <= kosong; j++) {
+            output += "<td class='empty'></td>";
+        }
+
+        output += "</tr>";
+    }
+
+    output += "</table>";
+
+    document.getElementById("hasil").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

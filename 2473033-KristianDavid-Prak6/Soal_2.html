@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kristian David - 2473033</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-spacing: 5px; 
+            margin-top: 20px;
+        }
+
+        td {
+            border: 2px solid #1a1a1a;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+            background-color: #ffffff;
+            box-shadow: inset 1px 1px 2px #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hasil"></div>
+
+<script>
+    let angka;
+
+    do {
+        angka = prompt("A number?");
+    } while (angka === null || angka.trim() === "" || isNaN(angka));
+
+    angka = parseInt(angka);
+
+    let output = "<table>";
+
+    for (let i = 1; i <= 8; i++) {
+        output += "<tr>";
+        output += "<td>" + i + "</td>";
+        output += "<td>x</td>";
+        output += "<td>" + angka + "</td>";
+        output += "<td>=</td>";
+        output += "<td>" + (i * angka) + "</td>";
+        output += "</tr>";
+    }
+
+    output += "</table>";
+
+    document.getElementById("hasil").innerHTML = output;
+</script>
+
+</body>
+</html>

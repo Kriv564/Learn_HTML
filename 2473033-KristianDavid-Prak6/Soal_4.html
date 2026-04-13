@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Number Conversion</title>
+
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    .box {
+        width: 350px;
+        border: 2px solid #999;
+        padding: 15px;
+        margin: 20px;
+        background-color: #eee;
+        box-shadow: 2px 2px 5px #aaa;
+    }
+
+    label {
+        display: inline-block;
+        width: 70px;
+        font-weight: bold;
+        color: blue;
+    }
+
+    input, select {
+        width: 200px;
+        margin-bottom: 10px;
+        padding: 3px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<h3>Number Conversion</h3>
+
+<div class="box">
+    <div>
+        <label>Input :</label>
+        <input type="text" id="input">
+    </div>
+
+    <div>
+        <label>Output :</label>
+        <input type="text" id="output" readonly>
+    </div>
+
+    <div>
+        <select id="mode">
+            <option value="dec2bin">decimal-biner</option>
+            <option value="bin2dec">biner-decimal</option>
+        </select>
+    </div>
+
+    <button onclick="proses()">PROSES</button>
+    <button onclick="resetForm()">RESET</button>
+</div>
+
+<script>
+function proses() {
+    let input = document.getElementById("input").value;
+    let mode = document.getElementById("mode").value;
+
+    if (mode === "dec2bin") {
+        // VALIDASI
+        if (input === "" || isNaN(input)) {
+            alert("Input harus angka!");
+            return;
+        }
+
+        let angka = parseInt(input);
+
+        if (angka < 0 || angka > 255) {
+            alert("Range harus 0 - 255!");
+            return;
+        }
+
+        // KONVERSI MANUAL DECIMAL → BINER
+        let hasil = "";
+        let temp = angka;
+
+        if (temp === 0) {
+            hasil = "0";
+        } else {
+            while (temp > 0) {
+                hasil = (temp % 2) + hasil;
+                temp = Math.floor(temp / 2);
+            }
+        }
+
+        document.getElementById("output").value = hasil;
+
+    } else {
+        // VALIDASI BINER
+        if (input.length !== 8) {
+            alert("Harus 8 digit biner!");
+            return;
+        }
+
+        for (let i = 0; i < input.length; i++) {
+            if (input[i] !== "0" && input[i] !== "1") {
+                alert("Hanya boleh 0 dan 1!");
+                return;
+            }
+        }
+
+        // KONVERSI MANUAL BINER → DECIMAL
+        let hasil = 0;
+        let pangkat = 0;
+
+        for (let i = input.length - 1; i >= 0; i--) {
+            if (input[i] === "1") {
+                hasil += Math.pow(2, pangkat);
+            }
+            pangkat++;
+        }
+
+        document.getElementById("output").value = hasil;
+    }
+}
+
+function resetForm() {
+    document.getElementById("input").value = "";
+    document.getElementById("output").value = "";
+}
+</script>
+
+</body>
+</html>
