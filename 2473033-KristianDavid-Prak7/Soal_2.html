@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Highlighted Table</title>
+
+<style>
+body {
+    font-family: Arial;
+}
+
+/* container biar mirip kotak */
+.table-box {
+    width: 350px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* header */
+th {
+    background-color: #bfc9b7;
+    padding: 8px;
+    text-align: left;
+}
+
+/* baris */
+td {
+    padding: 8px;
+}
+
+/* warna selang-seling */
+.row1 {
+    background-color: #8fb1d9;
+}
+
+.row2 {
+    background-color: #e6b38a;
+}
+
+/* hover (highlight) */
+.hovered {
+    background-color: #CCFFAA !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="table-box">
+    <table>
+        <tr>
+            <th>Position</th>
+            <th>Programming Language</th>
+            <th>Ratings</th>
+        </tr>
+
+        <tr class="row1" onmouseover="highlight(this)" onmouseout="unhighlight(this, 'row1')">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+
+        <tr class="row2" onmouseover="highlight(this)" onmouseout="unhighlight(this, 'row2')">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+
+        <tr class="row1" onmouseover="highlight(this)" onmouseout="unhighlight(this, 'row1')">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+
+        <tr class="row2" onmouseover="highlight(this)" onmouseout="unhighlight(this, 'row2')">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+
+        <tr class="row1" onmouseover="highlight(this)" onmouseout="unhighlight(this, 'row1')">
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+function highlight(row) {
+    row.classList.add("hovered");
+}
+
+function unhighlight(row, originalClass) {
+    row.classList.remove("hovered");
+}
+</script>
+
+</body>
+</html>
