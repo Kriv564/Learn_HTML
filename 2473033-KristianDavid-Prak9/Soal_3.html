@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2473033 - Kristian David</title>
+
+<script src="jquery-4.0.0.min.js"></script>
+
+<style>
+
+body{
+    font-family:Arial;
+}
+
+div.box{
+    width:40px;
+    height:40px;
+    margin:5px;
+    float:left;
+    border:2px blue solid;
+}
+
+.merah{
+    background:red;
+}
+
+.kuning{
+    background:yellow;
+}
+
+#wrap{
+    width:500px;
+    margin:50px auto;
+    padding:10px;
+    background:#eee;
+    box-shadow:0px 0px 10px gray;
+}
+
+.clear{
+    clear:both;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    $(".box").click(function(){
+
+        $(".box").removeClass("merah");
+
+        $(this).addClass("merah");
+
+    });
+
+    $("button").click(function(){
+
+        $(".box").each(function(){
+
+            if($(this).hasClass("merah")){
+                return false;
+            }
+
+            $(this).addClass("kuning");
+
+        });
+
+    });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="wrap">
+
+<button>Change colors</button>
+
+<br><br>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<div class="clear"></div>
+
+</div>
+
+</body>
+</html>

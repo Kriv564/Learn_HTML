@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2473033 - Kristian David</title>
+
+<script src="jquery-4.0.0.min.js"></script>
+
+<style>
+
+body{
+    font-family:Arial;
+}
+
+#box{
+    width:260px;
+    margin:40px auto;
+    padding:10px;
+    background:#eee;
+    box-shadow:0px 0px 10px gray;
+}
+
+#txtCari{
+    width:180px;
+    margin-bottom:10px;
+}
+
+.nama{
+    margin:3px 0px;
+}
+
+.merah{
+    color:red;
+}
+
+#footer{
+    text-align:center;
+    margin-top:50px;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    $("#txtCari").keyup(function(){
+
+        var cari = $(this).val().toLowerCase();
+
+        $(".nama").removeClass("merah");
+
+        $(".nama").each(function(){
+
+            var isi = $(this).text().toLowerCase();
+
+            if(isi.indexOf(cari) != -1 && cari != ""){
+                $(this).addClass("merah");
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="box">
+
+<input type="text" id="txtCari">
+
+<div class="nama">Sun Microsystem</div>
+<div class="nama">Apache Software Foundation</div>
+<div class="nama">Oracle Coorporation</div>
+<div class="nama">International Bussiness Machines</div>
+<div class="nama">Microsoft Coorporation</div>
+<div class="nama">Apple Inc</div>
+<div class="nama">Sap Ag</div>
+<div class="nama">Accenture</div>
+<div class="nama">Computer Sciences Coorporation</div>
+<div class="nama">Google</div>
+<div class="nama">Softbank</div>
+<div class="nama">Yahoo</div>
+
+</body>
+</html>
