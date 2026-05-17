@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2473033 - KristianDavid</title>
+
+<script src="jquery.js"></script>
+
+<script src="nilai.js"></script>
+<script src="nilaiA.js"></script>
+<script src="nilaiB.js"></script>
+
+<style>
+
+body{
+    font-family:Arial;
+}
+
+#box{
+    width:500px;
+    margin:auto;
+    border:1px solid black;
+    padding:10px;
+}
+
+#pilihan{
+    width:200px;
+    border:1px solid gray;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+table{
+    border-collapse:collapse;
+    width:320px;
+}
+
+th{
+    background:black;
+    color:white;
+    border:1px solid black;
+    padding:5px;
+}
+
+td{
+    border:1px solid black;
+    padding:5px;
+}
+
+tr:odd{
+    background:#FFFFCC;
+}
+
+tr:even{
+    background:#CCFFAA;
+}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+    $("#btnSearch").click(function(){
+
+        var kelas =
+        $("input[name='kelas']:checked").val();
+
+        var dataMahasiswa;
+
+        if(kelas=="All"){
+            dataMahasiswa = mahasiswa.nilai;
+        }
+
+        else if(kelas=="A"){
+            dataMahasiswa = mahasiswaA.nilai;
+        }
+
+        else if(kelas=="B"){
+            dataMahasiswa = mahasiswaB.nilai;
+        }
+
+        var isi = "";
+
+        isi += "<table>";
+
+        isi += "<tr>";
+        isi += "<th>NRP</th>";
+        isi += "<th>NAMA</th>";
+        isi += "<th>KELAS</th>";
+        isi += "<th>NILAI AKHIR</th>";
+        isi += "</tr>";
+
+        $.each(dataMahasiswa,function(i,item){
+
+            isi += "<tr>";
+
+            isi += "<td>"+item.nrp+"</td>";
+
+            isi += "<td>"+item.nama+"</td>";
+
+            isi += "<td>"+item.kelas+"</td>";
+
+            isi += "<td>"+item.nilaiakhir+"</td>";
+
+            isi += "</tr>";
+
+        });
+
+        isi += "</table>";
+
+        $("#hasil").html(isi);
+
+    });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="box">
+
+<h3>
+Selamat! Berikut adalah Daftar Mahasiswa
+yang mendapat Nilai A Pemograman Web
+SI Tahun Ajaran 2023/2024
+</h3>
+
+<div id="pilihan">
+
+<input type="radio"
+name="kelas"
+value="All"
+checked>
+All
+<br>
+
+<input type="radio"
+name="kelas"
+value="A">
+Kelas A
+<br>
+
+<input type="radio"
+name="kelas"
+value="B">
+Kelas B
+<br><br>
+
+<input type="button"
+value="Search"
+id="btnSearch">
+
+</div>
+
+<div id="hasil"></div>
+
+</div>
+
+</body>
+</html>
